@@ -1,0 +1,46 @@
+{
+  "name": "woofmeets-front-end",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prepare": "husky install",
+    "cm": "cz"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^4.0.10",
+    "axios": "^0.27.2",
+    "formik": "^2.2.9",
+    "next": "12.2.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "zustand": "^4.0.0"
+  },
+  "devDependencies": {
+    "@digitalroute/cz-conventional-changelog-for-jira": "^7.3.0",
+    "autoprefixer": "^10.4.8",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "8.21.0",
+    "eslint-config-next": "12.2.3",
+    "husky": "^8.0.1",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.1.7"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/@digitalroute/cz-conventional-changelog-for-jira",
+      "jiraOptional": true,
+      "jiraPrefix": "WOOF",
+      "skipScope": false,
+      "jiraLocation": "post-description"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && cz --hook || true"
+    }
+  }
+}
